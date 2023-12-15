@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+
 class Product
 {
     /** @var int|null numéro du produit */
