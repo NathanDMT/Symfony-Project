@@ -2,28 +2,39 @@
 
 namespace App\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 
+#[ORM\Entity]
 class Product
 {
     /** @var int|null numéro du produit */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column]
     private ?int $id;
 
     /** @var string|null nom du produit */
+    #[ORM\Column]
     private ?string $name;
 
     /** @var string|null description du produit */
+    #[ORM\Column(nullable: true)]
     private ?string $description;
 
     /** @var \DateTimeImmutable date d'ajout au catalogue */
+    #[ORM\Column]
     private \DateTimeImmutable $createdAt;
 
     /** @var int|null quantité en stock */
+    #[ORM\Column(nullable: true)]
     private ?int $quantityInStock;
 
     /** @var float|null prix HT */
+    #[ORM\Column]
     private ?float $price;
 
     /** @var string|null nom de l'image */
+    #[ORM\Column(nullable: true)]
     private ?string $imageName;
 
     public function getId(): ?int
