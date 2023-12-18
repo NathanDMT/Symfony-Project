@@ -34,4 +34,5 @@ class AppExtension extends AbstractExtension
             new TwigFunction('dateFr',[$this, 'dateInFrenchFormat'])
         ];
     }
+
 }
