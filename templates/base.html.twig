@@ -28,9 +28,9 @@
 
         <li>Quantitée en stock du produit : {{ product.quantityInStock }}</li>
 
-        <li>Prix du produit : {{ (product.price/100)|number_format(2) }}€</li>
+        <li>Prix du produit : {{ (product.price|price }}</li>
 
-        <li>Ajouté au catalogue le : {{ product.createdAt|date('d/m/Y H:i') }}</li>
+        <li>Ajouté au catalogue le : {{ product.createdAt|dateFr }}</li>
 
         <li><img src="/build/images/{{ product.imageName }}"></li>
     </ul>
