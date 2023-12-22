@@ -22,3 +22,7 @@
 ###> PhpStorm ###
 .idea/
 ###< PhpStorm ###
+
+###> Others ###
+node_modules/
+###< Others ###
