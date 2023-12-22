@@ -23,7 +23,7 @@ class ProductController extends AbstractController
         // Construire une page HTML avec les produits récupérés
 
         // Retourner la page
-    return $this->render('base.html.twig',['products'=>$products]);
+    return $this->render('product/product_show_all.html.twig',['products'=>$products]);
     }
 
     #[Route(path: '/product/show/{id}', name: 'product_show', requirements: ['id'=>'\d+'])]

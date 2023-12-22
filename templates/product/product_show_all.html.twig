@@ -1,0 +1,14 @@
+
+{%  extends 'base.html.twig' %}
+
+
+{% block body %}
+    <h1>Liste de tous les produits</h1>
+
+    {% for product in products %}
+        {%  include 'product/_product_card.html.twig' %}
+    {% else %}
+      <p>Il n'y a aucun produit!</p>
+    {% endfor %}
+{% endblock %}
+

@@ -1,0 +1,30 @@
+{# templates/product/_product_card.html.twig #}
+{# Rôle>
+    fiche d'un produit
+#}
+
+<ul>
+    <li>Nom du produit : {{ product.name }}</li>
+
+    {% set description = product.description %}
+
+    {% if description is not empty %}
+        <li>Description du produit : {{ description }}</li>
+    {% endif %}
+
+    <li>Quantitée en stock du produit : {{ product.quantityInStock }}</li>
+    <li>Prix du produit : {{ product.price|price }}</li>
+    <li>Ajouté au catalogue le : {{ product.createdAt|dateFr }}</li>
+
+    {% if products is not defined %}
+    <li>
+        <a href="{{ path('product_show_all') }}">Voir la liste des produits</a>
+    </li>
+    {% else  %}
+    <li>
+        <a href="{{ path('product_show', { 'id':  product.id}) }}">Voir la fiche</a>
+    </li>
+    {% endif %}
+
+    <li><img src="/build/images/{{ product.imageName }}"></li>
+</ul>

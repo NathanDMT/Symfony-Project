@@ -1,47 +1,19 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+    {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-    <h1>Hello World!</h1>
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
 
-    {% for product in products %}
-    <ul>
-        <li>Nom du produit : {{ product.name }}</li>
-
-        {% set description = product.description %}
-
-        {% if description is not empty %}
-        <li>Description du produit : {{ description }}</li>
-        {% endif %}
-
-        <li>Quantitée en stock du produit : {{ product.quantityInStock }}</li>
-
-        <li>Prix du produit : {{ product.price|price }}</li>
-
-        <li>Ajouté au catalogue le : {{ product.createdAt|dateFr }}</li>
-
-        <li>
-            <a href="{{ path('product_show', { 'id':  product.id}) }}">Voir la fiche</a>
-        </li>
-
-        <li><img src="/build/images/{{ product.imageName }}"></li>
-    </ul>
-        {% else %}
-        <p>Il n'y a aucun produit!</p>
-    {% endfor %}
-
-        {% block body %}{% endblock %}
-    </body>
+    {% block body %}
+    {% endblock body %}
+</head>
 </html>
