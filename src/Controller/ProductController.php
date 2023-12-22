@@ -26,7 +26,7 @@ class ProductController extends AbstractController
     return $this->render('base.html.twig',['products'=>$products]);
     }
 
-    #[Route(path: '/product/show/{id}', name: 'product_show')]
+    #[Route(path: '/product/show/{id}', name: 'product_show', requirements: ['id'=>'\d+'])]
     public function show(int $id, ProductRepository $productRepository) : Response
     {
         // Récupération de l'id passé au contrôleur

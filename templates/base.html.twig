@@ -33,7 +33,7 @@
         <li>Ajouté au catalogue le : {{ product.createdAt|dateFr }}</li>
 
         <li>
-            <a href="product/show/{{ product.id }}">Voir la fiche</a>
+            <a href="{{ path('product_show', { 'id':  product.id}) }}">Voir la fiche</a>
         </li>
 
         <li><img src="/build/images/{{ product.imageName }}"></li>
