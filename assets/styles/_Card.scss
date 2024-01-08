@@ -1,0 +1,42 @@
+.Card {
+  background-color: white;
+  border: solid silver 2px;
+  border-radius: 3px;
+  height: 300px;
+
+  display: flex; // Les éléments directement enfants deviennent flex-items
+
+  & > * {
+    flex-basis: 0; // taille de base éq au contenu
+  }
+
+  &_image {
+    flex-grow: 1.5;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &_info {
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+  }
+
+  &_title {
+    font-size: 2rem;
+    font-weight: bold;
+    flex-grow: 0.5;
+
+  }
+
+  &_description {
+    flex-grow: 2;
+  }
+
+  &_price {
+    font-weight: bold;
+  }
+}
