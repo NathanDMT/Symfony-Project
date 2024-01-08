@@ -7,7 +7,7 @@
 
   display: flex; // Les éléments directement enfants deviennent flex-items
 
-  &_hover {
+  &:hover {
     border: solid 2px darken(#d5e3ec, 20%);
   }
 

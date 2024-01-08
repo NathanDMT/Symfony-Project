@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-with-initial-scale=1.0, shrink-to-fit=no">
@@ -13,8 +13,12 @@
     {% block javascripts %}
         {{ encore_entry_script_tags('app') }}
     {% endblock %}
-
+</head>
+<body>
+<header class="Header">
+    <p class="Brand">Telem</p>
+</header>
     {% block body %}
     {% endblock body %}
-</head>
+</body>
 </html>
