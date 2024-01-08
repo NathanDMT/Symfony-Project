@@ -4,9 +4,14 @@
 
 {% block body %}
     <h1>Liste de tous les produits</h1>
-
     {% for product in products %}
+        {% if loop.first %}
+            <div class="CardCollection">
+        {% endif %}
         {%  include 'product/_product_card.html.twig' %}
+        {% if loop.last %}
+            </div>
+        {% endif %}
     {% else %}
       <p>Il n'y a aucun produit!</p>
     {% endfor %}
