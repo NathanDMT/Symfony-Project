@@ -40,6 +40,17 @@ class ProductRepository extends ServiceEntityRepository
         $this->qb = $this->createQueryBuilder($this->alias)
             ->select($this->alias);
     }
+
+    /**
+     * Initialise le queryBuilder avec la fonct agrégative COUNT sur l'attribut primaire (aucun NULL)
+     */
+    private function initializeQueryBuilderWithCount(): void
+    {
+        $this->qb = $this->createQueryBuilder($this->alias)
+            ->select("COUNT($this->alias.id)");
+        // Pour ignorer les doublons
+        //  ->select("COUNT(DISCTINCT $this->alias.id)");
+    }
 //----------------------------------------------------------
 // endregion **H2** Initialisation du queryBuilder
 //----------------------------------------------------------
@@ -61,23 +72,49 @@ class ProductRepository extends ServiceEntityRepository
             ->setParameter($propertyName, '%' . $keyword . '%');
     }
 //----------------------------------------------------------
+// endregion **H2** QueryBuilder mobilisant des filtres et/ou des jointures
+//----------------------------------------------------------
+
+    /**
+     * QueryBuilder cherchant tous les items contenant la chaîne passée en arg. "Qb" pour un queryBuilder et non la méthode
+     * @param string $keyword
+     * @return void
+     */
+private function searchQb(string $keyword): void
+{
+    // Recherche dans la description
+    $this->orPropertyLike('description', $keyword);
+    // Recherche dans le nom
+    $this->orPropertyLike('name', $keyword);
+}
+
+//----------------------------------------------------------
 // endregion **H2** Filtres
 //----------------------------------------------------------
 
 
 //**********************************************************
-//endregion *H1* Méthodes rtournant un QueryBuilder
+//endregion *H1* Méthodes retournant un QueryBuilder
 //**********************************************************
 
+
+//**********************************************************
+//region *H1* Méthodes retournant un jeu de résultats
+//**********************************************************
     public function search(string $keyword): array
     {
         $this->initializeQueryBuilder();
-        // Recherche dans la description
-        $this->orPropertyLike('description', $keyword);
-        // Recherche dans le nom
-        $this->orPropertyLike('name', $keyword);
-        // Recherche dans le prix
-        $this->orPropertyLike('price', $keyword);
+        $this->searchQb($keyword);
         return $this->qb->getQuery()->getResult();
     }
+    public function searchCount(string $keyword): int
+    {
+        $this->initializeQueryBuilderWithCount();
+        $this->searchQb($keyword);
+        return $this->qb->getQuery()->getSingleScalarResult();
+        // Permet de récupérer uniquement 1 entier
+    }
 }
+//**********************************************************
+//endregion *H1* Méthodes retournant un jeu de résultats
+//**********************************************************

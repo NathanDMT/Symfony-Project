@@ -6,6 +6,7 @@
     <h1>Liste de tous les produits</h1>
     {% for product in products %}
         {% if loop.first %}
+            <p>{{ products|length }} <span>résultats</span></p>
             <div class="CardCollection">
         {% endif %}
         {%  include 'product/_product_card.html.twig' %}
