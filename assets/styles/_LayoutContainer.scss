@@ -2,7 +2,7 @@
   display: grid;
   height: 100vh; // view height : hauteur de la fenêtre
   grid-template-rows: auto 1fr auto;
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: $grid-col1-width $grid-col2-width;
 
   &_header {
     grid-row-start: 1;

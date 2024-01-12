@@ -1,13 +1,41 @@
+/* #################################### */
+/*          Variables partagées         */
+/* #################################### */
 
-/************** Base **************/
-$color-base: #fff;
+/************** Couleur du thème **************/
+$color-base: #005d80;
+$color-secondary: #d5e3ec;
+
+/************** Grid **************/
+$grid-col1-width: 250px;
+$grid-col2-width: 1fr;
+
+/************** Margin **************/
+$margin-small: 2px;
+$margin-base: 5px;
+$margin-big: 10px;
+$margin-biggest: 15px;
+
+/************** Padding **************/
+$padding-small: 2px;
+$padding-base: 5px;
+$padding-big: 10px;
+$padding-biggest: 15px;
+
+/************** Radius **************/
+$radius-base: 5px;
+
+
+/* #################################### */
+/*                Blocks                */
+/* #################################### */
 
 /************** Brand **************/
 $brand-bg-color: #FF8119;
 $brand-font-color: #fff;
 $brand-font-family: 'Oxygen', sans-serif;
 
-/************** Brand **************/
+/************** Card **************/
 $card-border-color: #d5e3ec;
 $card-border-color-hover: darken($card-border-color, 20%);
 
@@ -17,22 +45,19 @@ $footer-bg-color: $color-base;
 /************** Header **************/
 $color-header: #005d80;
 $header-bg-color: $color-header;
-
-/************** Margin **************/
-$margin-small: 2px;
-$margin-base: 5px;
-$margin-big: 10px;
-$margin-biggest: 15px;
+$header-brand-width: $grid-col1-width - $padding-base;
+$header-padding: $padding-base;
 
 /************** MainMenu **************/
-$mainMenu-bg-color: #d5e3ec;
+$mainMenu-bg-color: $color-secondary;
 
 /************** MainContent **************/
 $mainContent-bg-color: #f7fafb;
 
-/************** Padding **************/
-$padding-small: 2px;
-$padding-base: 5px;
-$padding-big: 10px;
-$padding-biggest: 15px;
-
+/************** Search **************/
+$search-input-border: solid 4px $color-secondary;
+$search-button-bg-color: $color-secondary;
+$search-input-bg-color: #fff;
+$search-button-bg-hover-color: darken($search-button-bg-color, 15%);
+$search-input-focus-border: solid 4px invert($color-base);
+$search-input-placeholder-font-color: #919191;
