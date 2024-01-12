@@ -14,11 +14,19 @@
         {{ encore_entry_script_tags('app') }}
     {% endblock %}
 </head>
-<body>
-<header class="Header">
-    <p class="Brand">Telem</p>
+<body class="LayoutContainer">
+<header class="Header LayoutContainer_header">
+    <p class="Brand -big-sober">Telem</p>
 </header>
+<aside class="MainMenu LayoutContainer_mainMenu">
+    Menu
+</aside>
+<main class="MainContent LayoutContainer_mainContent">
     {% block body %}
     {% endblock body %}
+</main>
+<footer class="Footer LayoutContainer_footer">
+    Pied de page
+</footer>
 </body>
 </html>

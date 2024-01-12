@@ -1,0 +1,9 @@
+.Header {
+  height: 100px;
+  background-color: $header-bg-color;
+  padding: $padding-base;
+
+  // Gérer le centrage vertical des éléments enfants
+  display: flex;
+  align-items: center;
+}

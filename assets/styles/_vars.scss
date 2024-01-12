@@ -1,0 +1,38 @@
+
+/************** Base **************/
+$color-base: #fff;
+
+/************** Brand **************/
+$brand-bg-color: #FF8119;
+$brand-font-color: #fff;
+$brand-font-family: 'Oxygen', sans-serif;
+
+/************** Brand **************/
+$card-border-color: #d5e3ec;
+$card-border-color-hover: darken($card-border-color, 20%);
+
+/************** Footer **************/
+$footer-bg-color: $color-base;
+
+/************** Header **************/
+$color-header: #005d80;
+$header-bg-color: $color-header;
+
+/************** Margin **************/
+$margin-small: 2px;
+$margin-base: 5px;
+$margin-big: 10px;
+$margin-biggest: 15px;
+
+/************** MainMenu **************/
+$mainMenu-bg-color: #d5e3ec;
+
+/************** MainContent **************/
+$mainContent-bg-color: #f7fafb;
+
+/************** Padding **************/
+$padding-small: 2px;
+$padding-base: 5px;
+$padding-big: 10px;
+$padding-biggest: 15px;
+

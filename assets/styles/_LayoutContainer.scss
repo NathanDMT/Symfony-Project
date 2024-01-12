@@ -1,0 +1,34 @@
+.LayoutContainer {
+  display: grid;
+  height: 100vh; // view height : hauteur de la fenêtre
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 250px 1fr;
+
+  &_header {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  &_mainMenu {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  &_mainContent {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+
+  &_footer {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}

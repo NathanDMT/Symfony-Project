@@ -1,0 +1,21 @@
+.Brand {
+  display: inline-block;
+  background-color: $brand-bg-color;
+  font-size: 3rem;
+  color: $brand-font-color;
+  padding: $padding-big;
+  border: solid 1px currentColor;
+  text-decoration: none;
+  font-family: $brand-font-family;
+  font-weight: bold;
+
+  &.-big {
+    font-size: 5rem;
+  }
+
+  &.-sober {
+    background-color: transparent;
+    border: none;
+
+  }
+}
