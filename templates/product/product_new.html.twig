@@ -1,5 +1,11 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-    {{ form(form, {'attr': {novalidate: 'novalidate'}}) }}
+    {# { form(form, {'attr': {novalidate: 'novalidate'}}) }}#}
+
+{#    {{ form_start(form, {'attr': {novalidate: 'novalidate'}}) }#}
+{#    {{ form_widget(form) }}#}
+{#        <button type="submit">Créer le produit!</button>#}
+{#    {{ form_end }}#}
+
 {% endblock body %}

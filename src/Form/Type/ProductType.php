@@ -33,7 +33,8 @@ class ProductType extends AbstractType
                 'required'=>true,
 
             ])
-            ->add('enregister', SubmitType::class);
+            //->add('enregister', SubmitType::class)
+        ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
